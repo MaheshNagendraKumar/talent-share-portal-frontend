@@ -3,14 +3,14 @@ import ReusableForm from '../../components/form/Form';
 import FormInput from '../../components/formInput/FormInput';
 import Button from '../../components/button/Button';
 import userApi from '../../apis/userManagement';
-import {useSelector, useDispatch } from 'react-redux';
-import { setUser } from '../../store/userActions/userActions';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUser } from '../../store/userReducer/userActions';
 import { Link, useNavigate } from 'react-router-dom'
-import { RootState } from '../../store/userActions/reducers';
+import { RootState } from '../../store/rootReducer';
 
 function Login() {
   const [loginCredentials, setFormData] = useState({ userEmail: '', password: '' });
-  const user = useSelector((state: RootState) => state.user.user);
+  // const user = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -23,7 +23,7 @@ function Login() {
         navigate('/dashboard')
       })
       .catch(error => { console.log("error", error) })
-console.log("user", user);
+    // console.log("user", user);
 
   };
 

@@ -5,9 +5,8 @@ import Button from '../../components/button/Button';
 import userApi from '../../apis/userManagement';
 import { User } from '../../models/User'
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../store/userActions/userActions';
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import { setUser } from '../../store/userReducer/userActions';
+import { Link,useNavigate } from 'react-router-dom'
 
 function Register() {
   const [registerFormData, setRegisterFormData] = useState<User>({ fname: '', lname: '', userEmail: '', password: '', confirmPassword: '' });

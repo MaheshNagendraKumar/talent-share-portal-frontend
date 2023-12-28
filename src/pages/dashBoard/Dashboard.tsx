@@ -1,7 +1,7 @@
 import Button from '../../components/button/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearUser } from '../../store/userActions/userActions';
-import { RootState } from '../../store/userActions/reducers';
+import { clearUser } from '../../store/userReducer/userActions';
+import { RootState } from '../../store/rootReducer';
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
