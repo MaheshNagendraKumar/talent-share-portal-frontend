@@ -9,7 +9,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { RootState } from '../../store/rootReducer';
 
 function Login() {
-  const [loginCredentials, setFormData] = useState({ userEmail: '', password: '' });
+  const [loginCredentials, setFormData] = useState({ emailId: '', password: '', userType:'' });
   // const user = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -31,8 +31,9 @@ function Login() {
     <div>
       <div className='m-5'>
         <ReusableForm onSubmit={handleLogin} formData={loginCredentials} setFormData={setFormData}>
-          <FormInput label="User Email" name="userEmail" type="email" value={loginCredentials.userEmail} onChange={e => { setFormData({ ...loginCredentials, [e.target.name]: e.target.value }) }} />
+          <FormInput label="User Email" name="emailId" type="email" value={loginCredentials.emailId} onChange={e => { setFormData({ ...loginCredentials, [e.target.name]: e.target.value }) }} />
           <FormInput label="Password" name="password" type="password" value={loginCredentials.password} onChange={e => { setFormData({ ...loginCredentials, [e.target.name]: e.target.value }) }} />
+          <FormInput label="User Type" name="userType" type="text" value={loginCredentials.userType} onChange={e => { setFormData({ ...loginCredentials, [e.target.name]: e.target.value }) }} />
           <Button type="submit">Login</Button>
         </ReusableForm>
       </div>

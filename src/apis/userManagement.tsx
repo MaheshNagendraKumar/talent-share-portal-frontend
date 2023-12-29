@@ -13,7 +13,7 @@ const userApi = {
   loginUser:(loginData:any)=>{
     console.log("loginData", loginData);
     
-    return axios.post(userApi.url, loginData)
+    return axios.post(userApi.url+"login/", loginData)
   }
 
 
